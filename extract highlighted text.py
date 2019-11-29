@@ -1,24 +1,16 @@
 # the library package
-#
+# Python 3.7 TO HELP TO extract highlighted text from docx
+
+
+# step 1: unzip your docx document, so you get the xml file for your document
+# step 2, read the xml file for the contents of your document 
+
+
 import xml.etree.ElementTree as et
 
 # read files
 myfile=et.parse("document.xml")
 
-#tag, attribute and text
-myroot=myfile.getroot()
-'''
-#xml file is a tree
-print(myroot.tag)
-# first child of the element
-print(myroot[0].tag)
-print(myroot[0][0].tag)
-# attributes are present as dictionary, no attribute in this case
-print(myroot[0].attrib)
-print(myroot[0][0].attrib)
-print(myroot[0][0][1].tag)
-print(myroot[0][0][1][1].text)
-'''
 
 # revised code from: https://gist.github.com/shreyu86/1982168
 
