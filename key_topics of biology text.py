@@ -3,8 +3,12 @@ read_file=open('sample_biology_notes.txt','r')
 import nltk.data
 import pandas as pd
 import statistics
-sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
 
+
+
+
+
+sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
 
 def clean_text(file):
 
@@ -91,8 +95,9 @@ df=pd.DataFrame(sent_break,columns=['sentence'])
 maxword_list=[]
 print(df)
 
-non_meaning= ["as","of","by","all","they","will","it","or","a","in","on","are","'","the", "is" ,"are","these","this","that","which","where","and","am","doing","do","go","going"]
-
+import nltk
+from nltk.corpus import stopwords
+non_meaning=stopwords.words('english')
 
 for each in sent_break:
     words_li=each.split()
